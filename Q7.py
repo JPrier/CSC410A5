@@ -81,15 +81,15 @@ def main():
     stop = timeit.default_timer()
     print("Algo took: " + str(stop-start))
 
-    #start = timeit.default_timer()
-    for i in range(m):
-        for j in range(n):
-            start = timeit.default_timer()
-            if get_winning_player(i,j) == 2:
-                pass
-                #print("Wow player 2 won: ({},{})".format(i,j))
-            stop = timeit.default_timer()
-            print("Finding win took for ({},{}): {}".format(i,j,str(stop-start)))
+    # #start = timeit.default_timer()
+    # for i in range(m):
+    #     for j in range(n):
+    #         start = timeit.default_timer()
+    #         if get_winning_player(i,j) == 2:
+    #             pass
+    #             #print("Wow player 2 won: ({},{})".format(i,j))
+    #         stop = timeit.default_timer()
+    #         print("Finding win took for ({},{}): {}".format(i,j,str(stop-start)))
 
 if __name__ == "__main__":
     main()
