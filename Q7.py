@@ -69,9 +69,9 @@ def set_grid_loses(grid, x, y, m, n):
     return grid
 
 
-def print_grid(grid):
-    for i in range(len(grid)):
-        print('   '.join(grid[len(grid)-1-i]) + '\n')
+# def print_grid(grid):
+#     for i in range(len(grid)):
+#         print('   '.join(grid[len(grid)-1-i]) + '\n')
 
 
 def main():
