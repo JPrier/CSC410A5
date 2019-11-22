@@ -3,6 +3,7 @@
 \usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage{graphicx}
+\usepackage{ wasysym }
 
 \newcommand{\given}{\,|\,}
 \newcommand{\R}{\mathbb{R}}
@@ -29,7 +30,7 @@
 	\begin{enumerate}
 		\item 
 			\begin{enumerate}
-				\item All Paths:\\
+				\item \textbf{All Paths:}\\
 				1,2,3,9,10,11\\
 				1,2,3,9,13,14\\
 				1,5,6,7,9,10,11\\
@@ -66,7 +67,7 @@
 				\end{tabular} ~\\\\
 			This path will cause an assertion violation in the case that $X+Y \le 2$ since the assignments from 9,13,14 subtract 2 from the sum, $(X-1) + (Y-1) = X + Y - 2$\\\\
 			
-			Why the other 2 paths never cause an assertion violation:\\
+			\textbf{Why the other 2 paths never cause an assertion violation:}\\
 			\begin{tabular}{|c|c|c|}
 				\hline
 				\multicolumn{3}{|c|}{Assertion Violation Path} \\
@@ -100,7 +101,13 @@
 			Since $X+Y>10$ then $(X-6) + (Y+4) = X+Y-2 > 10-2 = 8$ therefore $x+y > 0$
 		
 			\end{enumerate}
-		\item 
+		\item \begin{enumerate}
+			\item $\square b \rightarrow b \cup o$
+			\item $\square \neg o \rightarrow ((r \rightarrow \ocircle w) \wedge (w \rightarrow \ocircle r)$
+			\item $\square \neg o \rightarrow r \cup (b \cup (w \cup r))$
+			\item $\square (r \wedge b \wedge g) \rightarrow \ocircle w$
+			\item $\square r \rightarrow r \cup \neg r$
+		\end{enumerate}
 		\item 
 		\item 
 		\item 
