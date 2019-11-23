@@ -157,8 +157,8 @@
 			
 		\end{enumerate}
 		\item \includepdf[pages=-]{Q4.pdf}
-		\item 
-		\item 
+		\item \includepdf[pages=-]{Q5.pdf}
+		\item $TS\models\exists(\Phi\cup\Psi)$ iff $TS' \models \exists\lozenge\Psi$\\\\
 		\item 
 		
 		\textbf{Algorithm Explanation:}\\
@@ -173,9 +173,7 @@
 		
 		\textbf{Code and Runtime:}\\
 		
-		To run the given code you will need python3 installed (seems to also work with python 2.7) and run ./game.sh 1 2\\
-		This will run the script to call the Q7.py module\\
-		Note: This script might have issues on unix systems (like cdf) because it was written on a dos system and the line endings will sometimes break the script. If this happens cdf will still run, python ./Q7.py 1 2\\
+		Note: Q7.py is the python module that holds all code, it along with the scripts given run on cdf. You can run it with ./game 1 2 but in case the game file does not run properly a script and the module are still provided (all take in arguments in the same way)\\
 		
 		The runtime complexity of the algorithm is roughly $O(\frac{m+n}{2})$ or under. This complexity runs any game within 100x100 games in well under a second. \\
 		
