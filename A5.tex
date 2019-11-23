@@ -5,7 +5,7 @@
 \usepackage{graphicx}
 \usepackage{ wasysym }
 \usepackage{pythonhighlight}
-
+\usepackage[final]{pdfpages}
 
 \newcommand{\given}{\,|\,}
 \newcommand{\R}{\mathbb{R}}
@@ -100,7 +100,7 @@
 				~ & $y\leftarrow (Y+5)-1=Y+4$ & AND $ X + Y \ge 0$   \\
 				\hline
 			\end{tabular} ~\\\\
-			Since $X+Y>10$ then $(X-6) + (Y+4) = X+Y-2 > 10-2 = 8$ therefore $x+y > 0$
+			Since $X+Y>10$ then $(X-6) + (Y+4) = X+Y-2 > 10-2 = 8$ therefore $x+y > 0$\\\\
 		
 			\end{enumerate}
 		\item \begin{enumerate}
@@ -108,9 +108,54 @@
 			\item $\square \neg o \rightarrow ((r \rightarrow \ocircle w) \wedge (w \rightarrow \ocircle r)$
 			\item $\square \neg o \rightarrow r \cup (b \cup (w \cup r))$
 			\item $\square (r \wedge b \wedge g) \rightarrow \ocircle w$
-			\item $\square r \rightarrow r \cup \neg r$
+			\item $\square r \rightarrow r \cup \neg r$\\\\
 		\end{enumerate}
-		\item 
+		\item \begin{enumerate}
+			\item 	$\varphi\ U\ \lnot\varphi\ \equiv\ true$
+			
+			Let $t=A_1A_2\ldots$ be some trace of some transition system T:\\
+			
+			By definition of U\\
+			$t \models\varphi\ U\lnot\varphi=\left(\forall i 0\le i\le j:A_i\models\varphi=true\right)\land\left(\forall j:i\le j:A_j\models\lnot\varphi=true\right)$
+			
+			By Distributivity of $\land$ over $\forall:$\\
+			$=\ \left(\forall i 0\le i\le j:A_i\models\varphi=true\ \land\ A_j\models\lnot\varphi=true\right)$\\
+			$=\ \left(\forall i 0\le k:A_k\models t\ r\ u\ e\right)$\\
+			$= t \models\ true$\\
+			
+			Therefore, $\varphi\ U\ \lnot\varphi\ \equiv\ true$
+			
+			\item $(\lozenge\square\varphi_1)\wedge(\lozenge\square\varphi_2)\equiv\lozenge(\square\varphi_1\wedge\square\varphi_2)$\\
+			
+			$\sigma\models(\lozenge\square\varphi_1)\wedge(\lozenge\square\varphi_2)$\\
+			$\sigma\models\lozenge\square\varphi_1$ and $\sigma\models\lozenge\square\varphi_2$\\
+			$\exists i\geq 0 \forall j\geq i \sigma[j\ldots]\models\varphi_1$ and $\exists i\geq 0 \forall j\geq i \sigma[j\ldots]\models\varphi_2$\\
+			$\exists i\geq 0 \forall j\geq i \sigma[j\ldots]\models\varphi_1$ and $\forall j\geq i \sigma[j\ldots]\models\varphi_2$\\
+			$\exists i\geq 0 ~\sigma[i\ldots]\models(\square\varphi_1\wedge\square\varphi_2)$\\
+			$\sigma\models\lozenge(\square\varphi_1\wedge\square\varphi_2)$\\
+			
+			Therefore $(\lozenge\square\varphi_1)\wedge(\lozenge\square\varphi_2)\equiv\lozenge(\square\varphi_1\wedge\square\varphi_2)$\\
+			\item
+			\item
+			\item 	$O\lozenge\varphi\ \equiv\lozenge O\varphi$\\
+			Let $t={A_0A}_1A_2\ldots$ be some trace of some transition system T\\
+			$t’ = {B_0B}_1B_2\ldots$ as the suffixe of t defined by $B_i=A_{i+1}$for every $0\le\ i$\\
+			
+			$t \models\ O\lozenge\varphi=\left(\forall
+			i:i\geq0:{A_{i+1}A}_{i+2}A_{i+3}\ldots\models\lozenge\varphi\right)$\\
+			$=\left(\forall i:i\geq0:{B_iB}_{i+1}B_{i+2}\ldots\models\lozenge\varphi\right)$\\
+			$=\left(\forall i:i\geq0:{B_iB}_{i+1}B_{i+2}\ldots\models t\ r\ u\ e\ U\varphi\right)$\\
+			$=\left(\forall j:j\geq0:{B_0B}_1{\ldots B}_j\models t\ r\ u\ e\land\forall k:k>j:{B_kB}_{k+1}\ldots\models\varphi=true\right)$\\
+			
+			By definition of B:
+			$=\left(\forall j:j\geq0:{A_1A}_2{\ldots A}_{j-1}\models t\ r\ u\ e\land\forall k:k\geq j:{A_kA}_{k+1}\ldots\models\varphi=true\right)$\\
+			$=true U O\varphi$\\
+			$= \lozenge O\varphi$\\
+			
+			Therefore, $O\lozenge\varphi\ \equiv\lozenge O\varphi$
+			
+			
+		\end{enumerate}
 		\item 
 		\item 
 		\item 
@@ -127,6 +172,10 @@
 		This is repeated until the location (m,n) on the grid is filled\\
 		
 		\textbf{Code and Runtime:}\\
+		
+		To run the given code you will need python3 installed (seems to also work with python 2.7) and run ./game.sh 1 2\\
+		This will run the script to call the Q7.py module\\
+		Note: This script might have issues on unix systems (like cdf) because it was written on a dos system and the line endings will sometimes break the script. If this happens cdf will still run, python ./Q7.py 1 2\\
 		
 		The runtime complexity of the algorithm is roughly $O(\frac{m+n}{2})$ or under. This complexity runs any game within 100x100 games in well under a second. \\
 		
